@@ -23,7 +23,7 @@ export default function Layout() {
                   Join
                 </NavLink>
                 <NavLink to="/new" className="btn btn--primary btn--sm">
-                  + New<span className="nav__link--hide-sm">&nbsp;decision</span>
+                  + New<span className="nav__link--hide-sm">decision</span>
                 </NavLink>
                 <button
                   className="btn btn--subtle btn--sm"
@@ -52,7 +52,7 @@ export default function Layout() {
       </header>
       <Outlet />
       <footer className="footer">
-        Tiebreak · ranked-choice decisions for groups · built with React, Express, MongoDB &amp; Netlify Functions
+        Tiebreak · Ranked-choice decisions for groups · React, Express, MongoDB, Netlify
       </footer>
     </>
   );

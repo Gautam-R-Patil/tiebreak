@@ -145,7 +145,7 @@ export default function Landing() {
           Takes about a minute to set up. Takes your group a lot less time to argue.
         </p>
         <div className="row" style={{ justifyContent: 'center', marginTop: 24, gap: 12, flexWrap: 'wrap' }}>
-          <Link to="/register" className="btn btn--lime btn--lg">
+          <Link to="/register" className="btn btn--primary btn--lg">
             Create a free account
           </Link>
           <Link to="/login" className="btn btn--ghost btn--lg">

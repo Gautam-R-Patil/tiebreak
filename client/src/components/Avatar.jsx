@@ -10,7 +10,7 @@ export default function Avatar({ name = '?', hue = 260, size = 'md', title }) {
     <span
       className={cls}
       title={title || name}
-      style={{ background: `linear-gradient(135deg, hsl(${hue} 70% 55%), hsl(${(hue + 40) % 360} 70% 40%))` }}
+      style={{ background: `linear-gradient(145deg, hsl(${hue} 72% 62%), hsl(${(hue + 30) % 360} 65% 48%))` }}
     >
       {initials}
     </span>

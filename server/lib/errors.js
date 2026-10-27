@@ -37,7 +37,11 @@ export function errorHandler(err, req, res, _next) {
   if (err?.name === 'CastError') {
     return res.status(400).json({ error: 'Malformed identifier.' });
   }
-  if (err?.name === 'MongooseServerSelectionError' || err?.name === 'MongoNetworkError') {
+  if (
+    err?.name === 'MongooseServerSelectionError' ||
+    err?.name === 'MongoNetworkError' ||
+    /MONGODB_URI/.test(err?.message || '')
+  ) {
     console.error('[db] connection failure:', err.message);
     return res.status(503).json({ error: 'Database is unreachable right now. Please try again shortly.' });
   }

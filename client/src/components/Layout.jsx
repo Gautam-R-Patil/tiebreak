@@ -16,14 +16,14 @@ export default function Layout() {
           <nav className="nav__links">
             {user ? (
               <>
-                <NavLink to="/app" className="nav__link">
+                <NavLink to="/app" className="nav__link nav__link--hide-sm">
                   Dashboard
                 </NavLink>
                 <NavLink to="/join" className="nav__link nav__link--hide-sm">
                   Join
                 </NavLink>
                 <NavLink to="/new" className="btn btn--primary btn--sm">
-                  + New decision
+                  + New<span className="nav__link--hide-sm">&nbsp;decision</span>
                 </NavLink>
                 <button
                   className="btn btn--subtle btn--sm"

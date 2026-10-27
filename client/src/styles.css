@@ -1836,6 +1836,12 @@ details.collapsible > *:not(summary) {
   .nav__link--hide-sm {
     display: none;
   }
+  .nav__inner {
+    gap: 10px;
+  }
+  .logo {
+    font-size: 18px;
+  }
   .card {
     padding: 18px;
   }

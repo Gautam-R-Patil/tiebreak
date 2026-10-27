@@ -1,0 +1,42 @@
+{
+  "name": "tiebreak",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiebreak — group decisions settled fairly with ranked-choice voting. MERN app deployed on Netlify (React + Express serverless functions + MongoDB Atlas).",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/local.js",
+    "dev:web": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test server/lib/*.test.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "framer-motion": "^11.3.19",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "nanoid": "^5.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "serverless-http": "^3.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
+    "vite": "^5.3.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

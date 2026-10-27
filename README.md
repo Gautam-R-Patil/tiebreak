@@ -88,7 +88,7 @@ MERN end to end: **M**ongoDB, **E**xpress, **R**eact, **N**ode.
 └───────────────┬────────────────────────────────────────────────────┘
                 │  /api/*   (netlify.toml redirect → /.netlify/functions/api)
 ┌───────────────▼────────────────────────────────────────────────────┐
-│  Netlify Function  netlify/functions/api.js  = serverless(Express) │
+│  Netlify Function  netlify/functions/api.mjs  = serverless(Express) │
 │  server/app.js                                                     │
 │    middleware: cors · json · path normaliser · lazy connectDB      │
 │    routes/auth.js       register · login · me                      │
@@ -200,7 +200,7 @@ Never commit `.env`. It is git-ignored; `.env.example` documents the shape.
    - Publish directory: `dist`
    - Functions directory: `netlify/functions`
 4. Under **Site configuration → Environment variables**, add `MONGODB_URI` and `JWT_SECRET`.
-5. Deploy. Netlify builds the SPA, bundles `netlify/functions/api.js` (which wraps the Express app), and the redirect in `netlify.toml` sends `/api/*` to it.
+5. Deploy. Netlify builds the SPA, bundles `netlify/functions/api.mjs` (which wraps the Express app), and the redirect in `netlify.toml` sends `/api/*` to it.
 6. Verify: `https://<your-site>.netlify.app/api/health` should return `{"ok":true,…}`.
 7. Optional: seed demo data against production from your machine:
 
@@ -257,7 +257,7 @@ tiebreak/
 │   ├── middleware/auth.js
 │   ├── models/             # User, Decision, Ballot
 │   └── routes/             # auth, decisions
-├── netlify/functions/api.js  # serverless-http wrapper
+├── netlify/functions/api.mjs  # serverless-http wrapper
 ├── netlify.toml
 ├── vite.config.js
 ├── .env.example

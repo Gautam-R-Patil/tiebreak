@@ -147,7 +147,7 @@ npm test
 Prerequisites: Node 18+ and a MongoDB connection string (a free MongoDB Atlas cluster, or a local `mongod`).
 
 ```bash
-git clone https://github.com/<you>/tiebreak.git
+git clone https://github.com/Gautam-R-Patil/tiebreak.git
 cd tiebreak
 npm install
 cp .env.example .env        # then fill in MONGODB_URI and JWT_SECRET
@@ -188,8 +188,10 @@ Never commit `.env`. It is git-ignored; `.env.example` documents the shape.
 
 ### Live demo
 
-**App:** `https://<your-site>.netlify.app`  ← replace after deploying
-**Demo login:** demo@tiebreak.app / demo1234 (after running `npm run seed` against the production database)
+**App:** https://tiebreak-vote.netlify.app
+**API health check:** https://tiebreak-vote.netlify.app/api/health
+**Demo login:** demo@tiebreak.app / demo1234 · decision codes `DEMO01` (decided), `DEMO02` (voting), `DEMO03` (collecting options)
+**Source:** https://github.com/Gautam-R-Patil/tiebreak
 
 ### Deploy to Netlify from GitHub
 
@@ -208,7 +210,11 @@ Never commit `.env`. It is git-ignored; `.env.example` documents the shape.
    MONGODB_URI="<atlas uri>" npm run seed
    ```
 
-Every push to the main branch redeploys automatically.
+Every push to the main branch redeploys automatically once the repository is connected. The current production site was published with the Netlify CLI from the same repository:
+
+```bash
+npx netlify-cli deploy --prod --build
+```
 
 ## API
 
@@ -281,8 +287,8 @@ Built from scratch for this project. Open-source libraries used are listed in `p
 ```
 Project Name:      Tiebreak
 Problem Statement: Group decisions made in chats and plain polls are slow, vulnerable to vote-splitting, and never clearly "closed". Tiebreak runs a managed ranked-choice (instant-runoff) election for a group: nominate, rank, auto-close, and a replayable result.
-GitHub Repository: https://github.com/<you>/tiebreak
-Deployed App:      https://<your-site>.netlify.app
+GitHub Repository: https://github.com/Gautam-R-Patil/tiebreak
+Deployed App:      https://tiebreak-vote.netlify.app
 Tech Stack:        React 18, Vite, React Router, framer-motion, dnd-kit · Node, Express, serverless-http (Netlify Functions) · MongoDB Atlas, Mongoose · JWT, bcrypt, zod
 Major Features:    Auth · decision lifecycle state machine (nominate → vote → closed) · share codes & join · participant nominations with limits · drag-and-drop ranked ballots (one per voter, editable, withdrawable) · deadline auto-close & quorum · instant-runoff engine with Borda tie-breaks, Condorcet check, pairwise matrix, round-by-round replay · host controls · dashboard · polling live updates
 ```
